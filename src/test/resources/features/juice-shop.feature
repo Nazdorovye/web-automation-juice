@@ -4,7 +4,7 @@ Feature: Juice Shop Actions
     And   I click "Dismiss button"
     And   I click "Me want it button"
 
-  # @run
+  @run
   Scenario: Set items per page
     When I click "Items per page"
     And  I click "Option 24"
@@ -12,7 +12,7 @@ Feature: Juice Shop Actions
       | Amount |
       | 24     |
 
-  # @run
+  @run
   Scenario: Search for 500ml
     When I search for "500ml"
     Then I see "search results" with the following data:
@@ -21,7 +21,7 @@ Feature: Juice Shop Actions
       | Lemon Juice (500ml)      | Sour but full of vitamins.         | 2.99  |
       | Strawberry Juice (500ml) | Sweet & tasty!                     | 3.99  |
 
-  # @run
+  @run
   Scenario: Find comment
     When I search for "King of the Hill"
     And  I "open item" with the following data:
@@ -30,7 +30,7 @@ Feature: Juice Shop Actions
     And  I click "Reviews expand"
     Then "Comment section" should contain "K33p5 y0ur ju1cy 5plu773r 70 y0ur53lf!"
 
-  # @run
+  @run
   Scenario: Add comment
     When I "log in" with the following data:
       | Email | Password |
@@ -45,7 +45,7 @@ Feature: Juice Shop Actions
     And  I click "Reviews Expand"
     Then "Comment section" should contain "Travel to Norway for more info"
 
-  # @run
+  @run
   Scenario: Create new Juice Shop user
     When I click "Account button"
     And  I click "Login button"
@@ -60,7 +60,7 @@ Feature: Juice Shop Actions
     Then I should be on "Login" page
     And  "Registration completed successfully." should be "visible"
 
-  # @run
+  @run
   Scenario Outline: Change language
     When I "log in" with the following data:
       | Email | Password |
@@ -107,6 +107,7 @@ Feature: Juice Shop Actions
     And  I click "Continue button"
     Then "Wallet balance" should contain "999.00"
 
+  @run
   Scenario: Change password
   When I "create an account" with the following data:
     | Email field  | Password field | Repeat Password field | Security Question | Security Answer field                                |
@@ -129,6 +130,7 @@ Feature: Juice Shop Actions
     | RANDOM_EMAIL | SeriousHeadAche |
   Then I am on the "Home" page
 
+  @run
   Scenario: Add new address
     When I "log in" with the following data:
       | Email | Password |
@@ -150,6 +152,7 @@ Feature: Juice Shop Actions
       | Name    | Address               | Country |
       | Karlson | Random Address 25-395 | Sweden  |
 
+  @run
   Scenario: Order an item
     When I "log in" with the following data:
       | Email | Password |
